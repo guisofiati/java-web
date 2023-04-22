@@ -9,30 +9,28 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import guisofiati.beans.Contact;
 
-@WebServlet("/FirstServlet")
-public class FirstServlet extends HttpServlet {
+@WebServlet(name = "deleteContact", urlPatterns = { "/deleteContact" })
+public class DeleteContactServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    public FirstServlet() {
+    public DeleteContactServlet() {
         super();
     }
-    
-    private int counter;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		counter++;
-		
 		PrintWriter out = response.getWriter();
+		
+		String number = request.getParameter("number");
+		
+		Contact.deleteContact(number);
 		
 		out.println("<html>");
 		out.println("<body>");
-		out.println("<h2> Hello, World! </h2> </br>");
-		out.println("<br>");
-		out.println("<p> Total access: " + counter + "</p>" );
+		out.println("<h1> Contact deleted. </h1>");
 		out.println("</body>");
 		out.println("</html>");
 		
-		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 }
