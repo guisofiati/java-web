@@ -6,20 +6,18 @@ import java.util.List;
 import com.opensymphony.xwork2.Action;
 
 import github.guisofiati.struts2xml.beans.Contact;
+import github.guisofiati.struts2xml.dao.ContactDAO;
+import github.guisofiati.struts2xml.dao.DaoFactory;
 
 public class ListContactsAction implements Action {
+	
+	ContactDAO contactDAO = DaoFactory.contactDaoInstance();
 	
 	private List<Contact> contacts = new ArrayList<Contact>();
 	
 	@Override
 	public String execute() throws Exception {
-		
-		Contact contact1 = new Contact(1, "Maria", "11988888888");
-		Contact contact2 = new Contact(2, "Jose", "11977777777");
-		
-		contacts.add(contact1);
-		contacts.add(contact2);
-		
+		contacts = contactDAO.findAll();
 		return SUCCESS;
 	}
 		
