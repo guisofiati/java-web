@@ -18,7 +18,7 @@
 		</action>
 		<action name="GetContact"
 			class="github.guisofiati.struts2xml.actions.GetContactAction">
-			<result name="success">/index.jsp</result>
+			<result name="success">/update.jsp</result>
 		</action>
 		<action name="DeleteContact"
 			class="github.guisofiati.struts2xml.actions.DeleteContactAction">

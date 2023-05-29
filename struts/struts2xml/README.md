@@ -22,6 +22,3 @@ ___
 - If application can not read **struts.xml** file try moving it to **src/main/resources/** folder;
 
 ___
-
-## TODO:
-- Update functionality

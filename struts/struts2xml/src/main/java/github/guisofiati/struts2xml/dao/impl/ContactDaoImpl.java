@@ -45,7 +45,7 @@ public class ContactDaoImpl implements ContactDAO {
 		
 		try {
 			statement = conn.createStatement();
-			String sql = "UPDATE contact SET name = '" + obj.getName() + "', '" + obj.getNumber() + "' WHERE id = " + obj.getId();
+			String sql = "UPDATE contact SET name = '" + obj.getName() + "', number = '" + obj.getNumber() + "' WHERE id = " + obj.getId();
 			rs = statement.executeUpdate(sql);
 		} catch (SQLException e) {
 			throw new DbException(e.getMessage());

@@ -23,7 +23,7 @@
 
 				<td><s:property value="#contact.number" /></td>
 
-				<td><s:url action="UpdateContact" var="linkUpdateContact">
+				<td><s:url action="GetContact" var="linkUpdateContact">
 						<s:param name="contactId">
 							<s:property value="#contact.id" />
 						</s:param>
