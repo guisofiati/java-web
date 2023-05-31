@@ -9,5 +9,24 @@
         <h1> 
             <h:outputLabel value="#{dataTimeController.dataTimeBean.dataTimeServer}"/>
         </h1>
+        
+         <h1>
+             Total access:
+             <h:outputLabel value="#{dataTimeController.dataTimeBean.countBean.counter}"/>
+        </h1>
+        
+        <br/>
+        
+        <h1>
+            <h:outputLabel value="#{dataTimeController.userName}"/>
+        </h1>
+        
+        <br/>
+        
+        <h:form>
+            <label for="user">User:</label>
+            <h:inputText id="user" value="#{userController.userBean.user}" />
+            <h:commandButton action="#{userController.infoUser}" value="Show" />
+        </h:form>
     </h:body>
 </html>
